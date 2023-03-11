@@ -19,7 +19,7 @@ public class StepDefinitions {
     private VirtualPage virtualPage;
     private HybridPage hybridPage;
     private InPersonPage inpersonPage;
-    private FundamentalsPage;
+    private FundamentalsPage fundamentalsPage;
     private List<WebElement> subscription;
     private List<WebElement> subscriptionFailed;
     private String xpath;
@@ -133,8 +133,8 @@ public class StepDefinitions {
     // 11. Fundamentals page:
     @When("I select the read more button - What You'll Learn")
     public void iSelectWhatYoullLearnReadmoreButton() {
-        Utils.scrollToElement(driver, FundamentalsPage.getWhatYoullLearnTitle());
-        FundamentalsPage.clickOnWhatYoullLearnReadmore();
+        Utils.scrollToElement(driver, fundamentalsPage.getWhatYoullLearnTitle());
+        fundamentalsPage.clickOnWhatYoullLearnReadmore();
     }
 
     @Then("Fundamentals page opens")

@@ -5,7 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FundamentalsPage {
-    public static void clickOnWhatYoullLearnReadmore() {
+    private WebElement WhatYoullLearnReadMore;
+
+    public void clickOnWhatYoullLearnReadmore() {
+        this.WhatYoullLearnReadMore.click();
+    }
+
+    public WebElement getWhatYoullLearnTitle() {
+        return fundamentalsTitle;
     }
 
     @FindBy(xpath = "/html/body/section[4]/div/div/div[2]/h2")
@@ -17,10 +24,7 @@ public class FundamentalsPage {
 
     @FindBy(xpath = "/html/body/section[4]/div/div/div[2]/a")
     private  WebElement whatyoulllearnReadMore;
-
-    public void clickOnWhatYoullLearnReadMore() {
-        this.whatyoulllearnReadMore.click();
-    }
 }
+
 
 
