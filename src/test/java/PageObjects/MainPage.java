@@ -24,7 +24,7 @@ public class MainPage {
         this.emailField.sendKeys(email);
     }
 
-    // 8. Find by text - "What You'll Learn":
+    // 7. Find by text - "What You'll Learn":
     @FindBy(xpath = "//*[@id=\"learn-fundamentals\"]/div/div/div[2]/h2")
     private WebElement learnHeader;
 
@@ -39,7 +39,7 @@ public class MainPage {
         return this.learnHeader.getText();
     }
 
-    // 9. Find by text - "Frequently Asked Questions":
+    // 8. Find by text - "Frequently Asked Questions":
     @FindBy(xpath = "//*[@id='questions']/div/h2")
     private WebElement faqHeader;
 
@@ -54,7 +54,7 @@ public class MainPage {
         return this.faqHeader.getText();
     }
 
-    // 10. Find by text - "Instructors":
+    // 9. Find by text - "Instructors":
     @FindBy(xpath = "//*[@id=\"instructors\"]/div/h2")
     private WebElement instructorsHeader;
 

@@ -5,26 +5,27 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FundamentalsPage {
-    private WebElement WhatYoullLearnReadMore;
 
-    public void clickOnWhatYoullLearnReadmore() {
-        this.WhatYoullLearnReadMore.click();
-    }
+    @FindBy(xpath = "//*[@id=\"learn-fundamentals\"]/div/div/div[2]")
+    private WebElement fundamentalsTitle;
 
-    public WebElement getWhatYoullLearnTitle() {
-        return fundamentalsTitle;
-    }
-
-    @FindBy(xpath = "/html/body/section[4]/div/div/div[2]/h2")
-    private  WebElement fundamentalsTitle;
+    @FindBy(xpath = "//*[@id=\"learn-fundamentals\"]/div/div/div[2]/a")
+    private WebElement fundamentalsReadMore;
 
     public FundamentalsPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "/html/body/section[4]/div/div/div[2]/a")
-    private  WebElement whatyoulllearnReadMore;
+    public WebElement getFundamentalsTitle() {
+        return fundamentalsTitle;
+    }
+
+    public void clickOnFundamentalsReadMore() {
+        this.fundamentalsReadMore.click();
+    }
 }
+
+
 
 
 
