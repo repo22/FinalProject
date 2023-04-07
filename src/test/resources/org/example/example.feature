@@ -6,13 +6,13 @@ Feature: Software testing course webpage
     When I click the submit button
     Then The confirmation pop-up appears
 
-  Scenario: #2. Failed subscription
+  Scenario: #2. Failed subscription - negative
     Given I am on the main page
     When I write the email address of "22@222. ro"
     When I click the submit button
     Then Subscription fails and the email field gets red margins
 
-  Scenario: #3. Failed subscription
+  Scenario: #3. Failed subscription - negative
     Given I am on the main page
     When I write the email address of "testsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestssss"
     When I click the submit button
@@ -73,8 +73,59 @@ Feature: Software testing course webpage
     Given I am on the contact information page
     When I write the email "jdoe@yahoo.com"
     And I write the phone "+40744311223"
-    #And I write the Country "Sweden"
-    #And I write the password "JohnsP@ss"
-    #And I write the same password "JohnsP@ss" for confirmation
+    And I write the country "Sweden"
+    And I write the city "Malmo"
+    And I write the post code "500168"
+    And I click the second next button
+    Then Course options page opens
+
+  Scenario: #14. Enrollment flow 3/5: Course options
+    Given I am on the course options page
+    When I select "Software Testing - Automation & Manual tester certificate"
+    And I select "Software Testing - Security tester certificate"
+    And I click the third next button
+    Then Payment information page opens
+
+  Scenario: #15. Enrollment flow 4/5: Payment information
+    Given I am on the Payment information page
+    When I write the card holder name "John Doe"
+    And I write the card number "4597-6591-0229-3771"
+    And I write the CVC "618"
+    And I click Month
+    And I select "September"
+    And I click Year
+    And I select "2024"
+    And I click the forth next button
+    Then Registration is completed with success
+    Then I select "Return to homepage" button
+
+  Scenario: #16. Select "Read More - Selenium" - bug
+    Given I am on the main page
+    And Page scrolls to Learn Selenium
+    When I select the read more button - Selenium
+    Then Selenium page opens
+
+  Scenario: #17. Enrollment flow - bug on second step
+    Given I am on the contact information page
+    When I write a wrong email "jdoe yahoo com"
+    And I write a wrong phone "Malmo"
+    And I write the country "Sweden"
+    And I write the city "Malmo"
+    And I write a wrong post code "5"
+    And I click the second next button
+    Then Enrollment step should show error
+
+  Scenario: #18. Enrollment flow 4/5: Payment information - negative
+    Given I am on the course options page
+    When I select "Software Testing - Automation & Manual tester certificate"
+    And I select "Software Testing - Security tester certificate"
+    And I click the third next button
+    And Payment information page opens
+    And I click the forth next button
+    Then Registration fails
+
+
+  #//continue with this scenario + then add a bug scenario with enrollment
+
 
 
