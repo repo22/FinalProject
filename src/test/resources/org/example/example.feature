@@ -6,13 +6,13 @@ Feature: Software testing course webpage
     When I click the submit button
     Then The confirmation pop-up appears
 
-  Scenario: #2. Failed subscription - negative
+  Scenario: #2. Failed subscription - negative (1/3)
     Given I am on the main page
     When I write the email address of "22@222. ro"
     When I click the submit button
     Then Subscription fails and the email field gets red margins
 
-  Scenario: #3. Failed subscription - negative
+  Scenario: #3. Failed subscription - negative (2/3)
     Given I am on the main page
     When I write the email address of "testsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestsssstestssss"
     When I click the submit button
@@ -99,13 +99,13 @@ Feature: Software testing course webpage
     Then Registration is completed with success
     Then I select "Return to homepage" button
 
-  Scenario: #16. Select "Read More - Selenium" - bug
+  Scenario: #16. Select "Read More - Selenium" - bug(1/2) opens wrong page Fundamentals page
     Given I am on the main page
     And Page scrolls to Learn Selenium
     When I select the read more button - Selenium
     Then Selenium page opens
 
-  Scenario: #17. Enrollment flow - bug on second step
+  Scenario: #17. Enrollment flow - bug(2/2) on second step wrong data is inserted
     Given I am on the contact information page
     When I write a wrong email "jdoe yahoo com"
     And I write a wrong phone "Malmo"
@@ -115,7 +115,7 @@ Feature: Software testing course webpage
     And I click the second next button
     Then Enrollment step should show error
 
-  Scenario: #18. Enrollment flow 4/5: Payment information - negative
+  Scenario: #18. Enrollment flow 4/5: Payment information - negative (3/3)
     Given I am on the course options page
     When I select "Software Testing - Automation & Manual tester certificate"
     And I select "Software Testing - Security tester certificate"
@@ -123,9 +123,3 @@ Feature: Software testing course webpage
     And Payment information page opens
     And I click the forth next button
     Then Registration fails
-
-
-  #//continue with this scenario + then add a bug scenario with enrollment
-
-
-

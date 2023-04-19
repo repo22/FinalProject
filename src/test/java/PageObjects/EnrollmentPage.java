@@ -250,4 +250,24 @@ public class EnrollmentPage {
         return paymentInformationHeader.getText();
     }
 
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/h3")
+    private WebElement contactInformationHeader;
+
+    public String getContactInformationHeader() {
+        return contactInformationHeader.getText();
+    }
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/h3")
+    private WebElement courseOptionsHeader;
+
+    public String getCourseOptionsHeader() {
+        return courseOptionsHeader.getText();
+    }
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/div[1]/div")
+    private WebElement registrationFailedHeader;
+
+    public String getRegistrationFailed() {
+        return registrationFailedHeader.getText();
+    }
 }

@@ -223,7 +223,7 @@ public class StepDefinitions {
 
     @Then("Contact information page opens")
     public void contactInformationPageOpens() {
-        Assert.assertEquals(driver.getTitle(), "Contact information");
+        Assert.assertEquals(enrollmentPage.getContactInformationHeader(), "Contact information");
     }
 
     // Scenario: #13. Enrollment flow 2/5: Contact information:
@@ -271,7 +271,7 @@ public class StepDefinitions {
 
     @Then("Course options page opens")
     public void courseOptionsPageOpens() {
-        Assert.assertEquals(driver.getTitle(), "Course options");
+        Assert.assertEquals(enrollmentPage.getCourseOptionsHeader(), "Course options");
     }
 
     //Scenario: #14. Enrollment flow 3/5: Course options:
@@ -407,7 +407,7 @@ public class StepDefinitions {
     @Then("Enrollment step should show error")
     public void registrationFailed() {
         Utils.waitForElementToLoadMillis(500);
-        Assert.assertTrue(driver.getPageSource().contains("error-message"));
+        Assert.assertEquals(enrollmentPage.getRegistrationFailed(), "error-message");
     }
 
     //Scenario: #18. Enrollment flow 4/5: Payment information - negative:
